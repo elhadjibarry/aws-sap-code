@@ -17,8 +17,8 @@
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::<bucket-name>",
-                "arn:aws:s3:::<bucket-name>/*"
+                "arn:aws:s3:::cross-account-test-77555",
+                "arn:aws:s3:::cross-account-test-77555/*"
             ]
         }
     ]
@@ -28,7 +28,7 @@
 
 1. Run the following command to assume the role using the CLI
 
-aws sts assume-role --role-arn arn:aws:iam::<target-account-id>:role/<role-name> --role-session-name mysession --external-id <external-id>
+aws sts assume-role --role-arn arn:aws:iam::291934546285:role/cross-account-role --role-session-name mysession --external-id pass123456
 
 2. Configure the credentials
 
@@ -38,4 +38,4 @@ aws configure set aws_session_token <session-token> --profile target-account
 
 3. Run CLI commands against the bucket
 
-aws s3 ls s3://<bucket-name> --profile target-account
+aws s3 ls s3://cross-account-test-77555 --profile target-account
