@@ -6,7 +6,7 @@
             "Action": [
                 "sns:Publish"
             ],
-            "Resource": "arn:aws:sns:us-east-1:821711655051:my-lifecycle-topic"
+            "Resource": "arn:aws:sns:us-east-1:291934546285:my-lifecycle-topic"
         },
         {
             "Effect": "Allow",
@@ -24,7 +24,7 @@
                 "logs:CreateLogStream",
                 "logs:PutLogEvents"
             ],
-            "Resource": "arn:aws:logs:us-east-1:821711655051:*"
+            "Resource": "arn:aws:logs:us-east-1:291934546285:*"
         }
     ]
 }
