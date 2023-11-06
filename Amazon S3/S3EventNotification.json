@@ -11,10 +11,10 @@
    "Action": [
     "SNS:Publish"
    ],
-   "Resource": "arn:aws:sns:Region:account-id:topic-name",
+   "Resource": "arn:aws:sns:us-east-1:291934546285:Default_CloudWatch_Alarms_Topic",
    "Condition": {
-      "ArnLike": { "aws:SourceArn": "arn:aws:s3:::awsexamplebucket1" },
-      "StringEquals": { "aws:SourceAccount": "bucket-owner-account-id" }
+      "ArnLike": { "aws:SourceArn": "arn:aws:s3:::aws-sap-lab" },
+      "StringEquals": { "aws:SourceAccount": "291934546285" }
    }
   }
  ]
