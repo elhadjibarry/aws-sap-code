@@ -1,0 +1,17 @@
+{
+  "name": "dct-queueposting",
+  "version": "0.0.1",
+  "description": "Digital Computer Training - Sample Page - Product visit data post to SQS queue",
+  "main": "index.js",
+  "dependencies": {
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.620.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

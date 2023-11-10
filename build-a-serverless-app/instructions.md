@@ -2,7 +2,7 @@
 
 Region: us-east-1
 
-Note your AWS account ID: *ACCOUNT_ID*
+Note your AWS account ID: 291934546285
 
 1. Create DynamoDB Table:
 	
@@ -14,7 +14,7 @@ Partition key: ProductVisitKey
 Name: ProductVisitsDataQueue
 Type: Standard
 	
-Note the Queue URL: *QUEUE URL*
+Note the Queue URL: https://sqs.us-east-1.amazonaws.com/291934546285/ProductVisitsDataQueue
 
 3. Go to AWS Lambda and create function:
 	
@@ -32,7 +32,7 @@ Name: productVisitsDataHandler
 
 7. Go to AWS CLI and send messages:
 
-AWS CLI Command: `aws sqs send-message --queue-url *QUEUE URL* --message-body file://message-body-1.json`
+AWS CLI Command: `aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/291934546285/ProductVisitsDataQueue --message-body file://message-body-1.json`
 Modify: Queue name and file name
 File location: Code/build-a-serverless-app/part-1
 
@@ -42,7 +42,7 @@ File location: Code/build-a-serverless-app/part-1
 2. On the "Exports and streams" configuration tab, enable a DynamoDB stream for "New Image"
 3. Create S3 bucket in same region:
 
-Name: product-visits-datalake
+Name: product-visits-datalake-91
 Modify: bucket name by adding letters/numbers at end to be unique
 Region: us-east-1
 
@@ -61,7 +61,7 @@ Name: productVisitsLoadingLambdaRole
 6. Unzip "DCTProductVisitsDataLake.zip" 
 7. Edit index.js and update bucket name entry:
 
-Bucket: 'product-visits-datalake'
+Bucket: 'product-visits-datalake-91'
 Note: Change bucket name to YOUR bucket name
 
 8. Then zip up contents (don't zip the whole folder) into "DCTProductVisitsDataLake.zip"
@@ -101,7 +101,7 @@ Name: productVisitsSendMessageLambdaRole
 3. Unzip "DCTProductVisitForm.zip"
 4. Edit index.js for backend and update queue name:
 
-QueueUrl: "*QUEUE URL*"
+QueueUrl: "https://sqs.us-east-1.amazonaws.com/291934546285/ProductVisitsDataQueue"
 
 Note: change above URL to YOUR queue URL
 
@@ -138,7 +138,7 @@ Function: productVisitsSendDataToQueue
 15. Unzip the file, change into the extract folder, and copy the file contents into the frontent folder
 16. Create a bucket:
 
-Name: product-visits-webform
+Name: product-visits-webform-91
 Updates: Add letters/numbers to bucket name to be unique
 Region: us-east-1
 Turn off block public access
@@ -155,7 +155,7 @@ region: 'us-east-1' // set this to the region you are running in.
 19. Use command line to change to folder containing the frontend directory
 20. Upload contents with AWS CLI command (change bucket name)
 
-`aws s3 sync ./frontend s3://product-visits-webform`
+`aws s3 sync ./frontend s3://product-visits-webform-91`
 
 21. Copy the object URL for index.html
 22. Use URL to access application and then test submitting data using the form
@@ -177,7 +177,7 @@ Please follow the steps in the video.
 - Table name: MyDataLake
 - Create a database
 - Database name: s3_data_lake
-- Dataset: s3://product-visits-datalake/data/ ***modify the bucket name**
+- Dataset: s3://product-visits-datalake-91/data/ ***modify the bucket name**
 - Table type: Apache Hive
 - File format: CSV
 
