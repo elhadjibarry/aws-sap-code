@@ -17,9 +17,9 @@ Create an IAM role and use policy "ecr-allow-all.json"
 Attach role to EC2 instance and then run the following commands (replace account number):
 
 aws ecr create-repository --repository-name nginx --region us-east-1
-docker tag nginx:latest 821711655051.dkr.ecr.us-east-1.amazonaws.com/nginx:latest
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 821711655051.dkr.ecr.us-east-1.amazonaws.com/nginx
-docker push 821711655051.dkr.ecr.us-east-1.amazonaws.com/nginx:latest
+docker tag nginx:latest 291934546285.dkr.ecr.us-east-1.amazonaws.com/nginx:latest
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 291934546285.dkr.ecr.us-east-1.amazonaws.com/nginx
+docker push 291934546285.dkr.ecr.us-east-1.amazonaws.com/nginx:latest
 
 ## Part 2 - [HOL] Create Task Definition and ALB
 
