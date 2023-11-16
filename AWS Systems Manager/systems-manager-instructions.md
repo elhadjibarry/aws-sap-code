@@ -57,7 +57,7 @@ yum info amazon-ssm-agent
 2. Update "INSTANCE_ID" below with one of your instance IDs
 
 ```bash
-aws ssm put-compliance-items --resource-id INSTANCE_ID --resource-type ManagedInstance --compliance-type Custom:CorporateSoftware --execution-summary ExecutionTime=1687802409 --items Id=Version-2.0,Title=CorporateSoftware,Severity=CRITICAL,Status=NON_COMPLIANT --region us-east-1
+aws ssm put-compliance-items --resource-id i-0b2572b066a7816b8 --resource-type ManagedInstance --compliance-type Custom:CorporateSoftware --execution-summary ExecutionTime=1687802409 --items Id=Version-2.0,Title=CorporateSoftware,Severity=CRITICAL,Status=NON_COMPLIANT --region us-east-1
 ```
 
 3. Run the command using AWS CloudShell
