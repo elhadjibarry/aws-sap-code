@@ -4,17 +4,17 @@
       {
           "Action": "s3:GetBucketAcl",
           "Effect": "Allow",
-          "Resource": "arn:aws:s3:::BUCKET_NAME",
+          "Resource": "arn:aws:s3:::product-datalake-cw-logs",
           "Principal": { "Service": "logs.us-east-1.amazonaws.com" },
           "Condition": {
             "StringEquals": {
                 "aws:SourceAccount": [
-                    "ACCOUNT_ID"
+                    "291934546285"
                 ]
             },
             "ArnLike": {
                     "aws:SourceArn": [
-                        "arn:aws:logs:us-east-1:ACCOUNT_ID:log-group:*"
+                        "arn:aws:logs:us-east-1:291934546285:log-group:/aws/lambda/productVisitsDatalakeLoadingHandler:*"
                      ]
             }
           }
@@ -22,18 +22,18 @@
       {
           "Action": "s3:PutObject" ,
           "Effect": "Allow",
-          "Resource": "arn:aws:s3:::BUCKET_NAME/*",
+          "Resource": "arn:aws:s3:::product-datalake-cw-logs/*",
           "Principal": { "Service": "logs.us-east-1.amazonaws.com" },
           "Condition": {
             "StringEquals": {
                 "s3:x-amz-acl": "bucket-owner-full-control",
                 "aws:SourceAccount": [
-                    "ACCOUNT_ID"
+                    "291934546285"
                 ]
             },
             "ArnLike": {
                     "aws:SourceArn": [
-                        "arn:aws:logs:us-east-1:ACCOUNT_ID:log-group:*"
+                        "arn:aws:logs:us-east-1:291934546285:log-group:/aws/lambda/productVisitsDatalakeLoadingHandler:*"
                     ]
             }
           }
