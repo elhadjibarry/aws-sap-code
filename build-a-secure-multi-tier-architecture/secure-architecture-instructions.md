@@ -154,7 +154,7 @@ Value/Route traffic to: ALB
         "AWS": "arn:aws:iam::127311923021:root"
       },
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::BUCKET-NAME/AWSLogs/YOUR-ACCOUNT-ID/*"
+      "Resource": "arn:aws:s3:::my-logging-elb-cf-91/AWSLogs/291934546285/*"
     }
   ]
 }
@@ -207,7 +207,7 @@ Action: Block
 3. Use the following command on CloudShell to trip the WAF rule (modify the domain name)
 
 ```bash
-for i in {1..140}; do curl https://YOUR-DOMAIN-NAME/; done
+for i in {1..140}; do curl https://visiotechno.net/; done
 ```
 
 
